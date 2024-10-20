@@ -1,0 +1,10 @@
+[monitors.Home-Down]
+product="U32G2G1"
+serial="291"
+
+[configurations.Home-Down-Only]
+monitors = ["Home-Down"]
+[configurations.Home-Down-Only.Home-Down]
+mode = "3330x1440"
+position = "0x0"
+primary = true
