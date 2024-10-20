@@ -218,6 +218,7 @@ require("lazy").setup({
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"tzachar/cmp-ai",
 			"onsails/lspkind.nvim",
 			"neovim/nvim-lspconfig",
 		},
@@ -229,7 +230,7 @@ require("lazy").setup({
 					format = lspkind.cmp_format({
 						mode = "symbol", -- show only symbol annotations
 						maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-						symbol_map = { Copilot = "" },
+						symbol_map = { Copilot = "", Ollama = "" },
 						ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 						-- The function below will be called before any actual modifications from lspkind
 						-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
@@ -256,7 +257,6 @@ require("lazy").setup({
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				sources = cmp.config.sources({
-					{ name = "copilot", group_index = 2 },
 					{ name = "nvim_lsp" },
 					-- { name = 'vsnip' }, -- For vsnip users.
 					{ name = "luasnip" }, -- For luasnip users.
@@ -372,5 +372,72 @@ require("lazy").setup({
 			"folke/trouble.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
+	},
+	{
+		"olimorris/codecompanion.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"hrsh7th/nvim-cmp", -- Optional: For using slash commands and variables in the chat buffer
+			"nvim-telescope/telescope.nvim", -- Optional: For using slash commands
+			{ "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
+		},
+		config = function()
+			require("codecompanion").setup({
+				strategies = {
+					chat = {
+						adapter = "llama3",
+					},
+					inline = {
+						adapter = "llama3",
+					},
+					agent = {
+						adapter = "llama3",
+					},
+				},
+				adapters = {
+					llama3 = function()
+						return require("codecompanion.adapters").extend("ollama", {
+							name = "llama3", -- Give this adapter a different name to differentiate it from the default ollama adapter
+							schema = {
+								model = {
+									default = "llama3.1:8b",
+								},
+								num_ctx = {
+									default = 16384,
+								},
+								num_predict = {
+									default = -1,
+								},
+							},
+						})
+					end,
+				},
+			})
+		end,
+	},
+	{
+		"tzachar/cmp-ai",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local cmp_ai = require("cmp_ai.config")
+			cmp_ai:setup({
+				max_lines = 100,
+				provider = "Ollama",
+				provider_options = {
+					model = "codellama:13b-code",
+				},
+				notify = true,
+				notify_callback = function(msg)
+					vim.notify(msg)
+				end,
+				run_on_every_keystroke = true,
+				ignored_file_types = {
+					-- default is not to ignore
+					-- uncomment to ignore in lua:
+					-- lua = true
+				},
+			})
+		end,
 	},
 })
