@@ -26,9 +26,18 @@
     ./ollama.nix
     ./searx.nix
     ./keyboard.nix
-    inputs.sops-nix.nixosModules.sops
+    inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
+
+  age.secrets.openai_token = {
+    file = ../../secrets/openai_token.age;
+    owner = "drownbes";
+    mode = "440";
+  };
+  environment.variables = {
+    OPENAI_API_KEY = "$(cat ${config.age.secrets.openai_token.path})";
+  };
 
   # find a way to define it in home-manager
   users.defaultUserShell = pkgs.zsh;
@@ -49,6 +58,7 @@
   };
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
+    inputs.agenix.packages.x86_64-linux.default
     wget
     git
     dolphin
