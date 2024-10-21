@@ -26,6 +26,7 @@
     ./ollama.nix
     ./searx.nix
     ./keyboard.nix
+    inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -63,6 +64,14 @@
     nil
     xclip
   ];
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
 
   services.xserver = {
     enable = true;

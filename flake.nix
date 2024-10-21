@@ -16,6 +16,7 @@
     hardware.url = "github:NixOS/nixos-hardware/master";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
