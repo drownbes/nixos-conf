@@ -17,6 +17,9 @@
     ./telegram.nix
     ./neovim
     ./copyq.nix
+    ./fabric-ai.nix
+    ./tray-target.nix
+    ./pasystray.nix
   ];
 
   # Add stuff for your user as you see fit:

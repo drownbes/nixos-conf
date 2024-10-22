@@ -323,6 +323,21 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
+		config = function()
+			require("neo-tree").setup({
+				filesystem = {
+					filtered_items = {
+						hide_dotfiles = false,
+						hide_gitignored = false,
+						hide_hidden = false,
+					},
+					follow_current_file = {
+						enabled = true,
+						leave_dirs_open = true,
+					},
+				},
+			})
+		end,
 	},
 	{
 		"akinsho/toggleterm.nvim",
@@ -440,4 +455,18 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+  {
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",         -- required
+    "sindrets/diffview.nvim",        -- optional - Diff integration
+
+    -- Only one of these is needed.
+    "nvim-telescope/telescope.nvim", -- optional
+    "ibhagwan/fzf-lua",              -- optional
+    "echasnovski/mini.pick",         -- optional
+  },
+  config = true
+  }
 })
