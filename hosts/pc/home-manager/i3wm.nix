@@ -12,6 +12,7 @@ let
     ${osConfig.systemd.package}/bin/systemctl --user set-environment I3SOCK=$(${pkgs.i3}/bin/i3 --get-socketpath)
     ${osConfig.systemd.package}/bin/systemctl --user start graphical-session-i3.target
   '';
+  modifier = config.xsession.windowManager.i3.config.modifier;
 in {
   xsession.windowManager.i3 = {
     enable = true;
@@ -19,6 +20,12 @@ in {
       bars = [];
       terminal = "${lib.getExe pkgs.alacritty}";
       menu = "\"${lib.getExe pkgs.rofi} -modi drun, run -show drun\"";
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+j" = "focus down";
+        "${modifier}+k" = "focus up";
+        "${modifier}+h" = "focus left";
+        "${modifier}+l" = "focus right";
+      };
     };
   };
   xsession.windowManager.i3.config.startup = [
