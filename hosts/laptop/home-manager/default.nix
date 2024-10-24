@@ -1,6 +1,4 @@
 {...}: {
-  home.stateVersion = "23.11";
-
   imports = [
     ../../shared/home-manager/alacritty.nix
     ../../shared/home-manager/zsh.nix
@@ -18,4 +16,8 @@
   ];
 
   services.easyeffects.enable = true;
+
+  systemd.user.startServices = "sd-switch";
+
+  home.stateVersion = "23.11";
 }
