@@ -1,10 +1,14 @@
 {...}: {
   imports = [
-    ./git.nix
-    ./zsh.nix
-    ./fzf.nix
-    ./alacritty.nix
-    ./ripgrep.nix
+    ../../shared/home-manager/git.nix
+    ../../shared/home-manager/zsh.nix
+    ../../shared/home-manager/fzf.nix
+    ../../shared/home-manager/alacritty.nix
+    ../../shared/home-manager/ripgrep.nix
+    ../../shared/home-manager/fd.nix
+    ../../shared/home-manager/telegram.nix
+    ../../shared/home-manager/eza.nix
+    ../../shared/home-manager/neovim
     ./i3wm.nix
     ./rofi.nix
     ./dunst.nix
@@ -12,10 +16,6 @@
     ./picom.nix
     ./autorandr.nix
     ./librewolf.nix
-    ./eza.nix
-    ./fd.nix
-    ./telegram.nix
-    ./neovim
     ./copyq.nix
     ./fabric-ai.nix
     ./tray-target.nix

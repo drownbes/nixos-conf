@@ -15,13 +15,13 @@
     ./filesystem.nix
     ./gpu.nix
     ./kernel.nix
-    ./locale.nix
+    ../shared/locale.nix
     ./network.nix
-    ./time.nix
-    ./fonts.nix
+    ../shared/time.nix
+    ../shared/fonts.nix
 
-    ./nixpkgs.nix
-    ./nix.nix
+    ../shared/nixpkgs.nix
+    ../shared/nix.nix
     ./steam.nix
     ./ollama.nix
     ./searx.nix
@@ -74,6 +74,9 @@
     nil
     xclip
   ];
+
+
+  services.fwupd.enable = true;
 
   services.openssh = {
     enable = true;

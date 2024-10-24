@@ -7,6 +7,7 @@
     liberation_ttf
     fira-code
     fira-code-symbols
+    fira-code-nerdfont
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts

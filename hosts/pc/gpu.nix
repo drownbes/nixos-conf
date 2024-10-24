@@ -10,7 +10,9 @@
   # nvidia setting require patch that is in unstable right now
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement = {
+      enable = true;
+    };
     open = false;
     nvidiaSettings = false;
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {

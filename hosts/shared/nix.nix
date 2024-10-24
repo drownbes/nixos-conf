@@ -8,6 +8,7 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       substituters = [
+        "https://cache.iog.io"
         "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"
@@ -15,10 +16,10 @@
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
       ];
     };
   };
-  system.stateVersion = "24.05"; # Did you read the comment?
 
   nixpkgs = {
     hostPlatform = lib.mkDefault "x86_64-linux";
