@@ -51,10 +51,11 @@ in {
     ./filesystem.nix
     ./bluetooth.nix
     ./kernel.nix
+    ./audio.nix
     ./framework-hardware.nix
     ./network.nix
   ];
-    # networking.hostName = "nixos"; # Define your hostname.
+  # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   security.polkit.enable = true;
@@ -66,25 +67,6 @@ in {
 
   services.dbus.enable = true;
   services.fwupd.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-  services.pipewire.wireplumber.extraConfig."10-bluez" = {
-    "monitor.bluez.properties" = {
-      "bluez5.enable-sbc-xq" = true;
-      "bluez5.enable-msbc" = true;
-      "bluez5.enable-hw-volume" = true;
-      "bluez5.headset-roles" = [
-        "hsp_hs"
-        "hsp_ag"
-        "hfp_hf"
-        "hfp_ag"
-      ];
-    };
-  };
 
   home-manager = {
     useGlobalPkgs = true;
@@ -109,7 +91,6 @@ in {
 
   services.touchegg.enable = true;
 
-  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -137,7 +118,7 @@ in {
     wmctrl
     unstable.fd
     unstable.nil
-    (unstable.shotcut.overrideAttrs (finalAttrs: previousAttrs: {
+    (unstable.shotcut.overrideAttrs (_finalAttrs: previousAttrs: {
       buildInputs = previousAttrs.buildInputs ++ [unstable.kdePackages.qtwayland];
     }))
     way-displays

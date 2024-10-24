@@ -75,7 +75,6 @@
     xclip
   ];
 
-
   services.fwupd.enable = true;
 
   services.openssh = {

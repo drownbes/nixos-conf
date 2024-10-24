@@ -1,4 +1,9 @@
-{inputs, lib, config, ...}: {
+{
+  inputs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     inputs.hardware.nixosModules.framework-11th-gen-intel
   ];
