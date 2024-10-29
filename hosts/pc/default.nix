@@ -26,6 +26,7 @@
     ./ollama.nix
     ./searx.nix
     ./keyboard.nix
+    ./docker.nix
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -53,7 +54,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "AM";
-    extraGroups = ["networkmanager" "wheel" "gamemod"];
+    extraGroups = ["networkmanager" "wheel" "gamemod" "docker"];
     packages = with pkgs; [];
   };
   programs.zsh.enable = true;
