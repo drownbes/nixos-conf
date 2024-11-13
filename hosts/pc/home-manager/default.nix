@@ -13,13 +13,14 @@
     ./rofi.nix
     ./dunst.nix
     ./polybar.nix
-    ./picom.nix
+    #./picom.nix
     ./autorandr.nix
     ./librewolf.nix
     ./copyq.nix
     ./fabric-ai.nix
     ./tray-target.nix
     ./pasystray.nix
+    ./redshift.nix
   ];
 
   # Add stuff for your user as you see fit:

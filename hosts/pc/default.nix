@@ -22,7 +22,6 @@
 
     ../shared/nixpkgs.nix
     ../shared/nix.nix
-    ./steam.nix
     ./ollama.nix
     ./searx.nix
     ./keyboard.nix
@@ -72,8 +71,9 @@
     pavucontrol
     vscode
     gcc
-    nil
     xclip
+    element-desktop
+    unstable.nix
   ];
 
   services.fwupd.enable = true;

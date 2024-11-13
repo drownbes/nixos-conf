@@ -127,6 +127,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 		end,
 	},
+	{ "towolf/vim-helm", ft = "helm" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -190,7 +191,22 @@ require("lazy").setup({
 		dependencies = {
 			"j-hui/fidget.nvim",
 		},
+		opts = {
+			setup = {
+				yamlls = function()
+					LazyVim.lsp.on_attach(function(client, buffer)
+						if vim.bo[buffer].filetype == "helm" then
+							vim.schedule(function()
+								vim.cmd("LspStop ++force yamlls")
+							end)
+						end
+					end, "yamlls")
+				end,
+			},
+		},
 		config = function()
+			require("lspconfig").yamlls.setup({})
+			require("lspconfig").helm_ls.setup({})
 			require("lspconfig").nil_ls.setup({})
 			require("lspconfig").gopls.setup({})
 			require("lspconfig").rust_analyzer.setup({})
@@ -321,7 +337,6 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
-			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 		config = function()
 			require("neo-tree").setup({

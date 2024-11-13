@@ -25,6 +25,10 @@
     };
   };
 
+  services.xserver.screenSection = ''
+    Option "metamodes" "nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"
+  '';
+
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "nvidia";
