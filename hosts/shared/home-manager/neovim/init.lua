@@ -187,6 +187,12 @@ require("lazy").setup({
 	},
 
 	{
+		"mrcjkb/rustaceanvim",
+		version = "^5", -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
+
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"j-hui/fidget.nvim",
@@ -209,7 +215,7 @@ require("lazy").setup({
 			require("lspconfig").helm_ls.setup({})
 			require("lspconfig").nil_ls.setup({})
 			require("lspconfig").gopls.setup({})
-			require("lspconfig").rust_analyzer.setup({})
+			-- require("lspconfig").rust_analyzer.setup({})
 			require("lspconfig").zls.setup({
 				settings = {
 					zls = {
@@ -222,6 +228,13 @@ require("lazy").setup({
 			vim.g.zig_fmt_autosave = 0
 		end,
 	},
+	{
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
+	},
 
 	{
 		"hrsh7th/nvim-cmp",
@@ -230,6 +243,7 @@ require("lazy").setup({
 		-- these dependencies will only be loaded when cmp loads
 		-- dependencies are always lazy-loaded unless specified otherwise
 		dependencies = {
+			"L3MON4D3/LuaSnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",

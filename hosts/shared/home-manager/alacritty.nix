@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.alacritty = {
     enable = true;
-    # package = pkgs.unstable.alacritty;
+    package = pkgs.unstable.alacritty;
     settings = {
       import = [
         pkgs.alacritty-theme.oceanic_next

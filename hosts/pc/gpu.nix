@@ -39,6 +39,9 @@
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
+    (config.hardware.nvidia.package.settings.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [pkgs.vulkan-headers];
+    }))
   ];
 
   hardware.opengl = {

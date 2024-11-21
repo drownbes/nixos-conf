@@ -74,6 +74,7 @@
     xclip
     element-desktop
     unstable.nix
+    unstable.obsidian
   ];
 
   services.fwupd.enable = true;

@@ -21,6 +21,7 @@
     ./tray-target.nix
     ./pasystray.nix
     ./redshift.nix
+    ./nix-direnv.nix
   ];
 
   # Add stuff for your user as you see fit:

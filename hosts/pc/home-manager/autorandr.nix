@@ -18,7 +18,7 @@
           DP-2 = {
             enable = true;
             crtc = 0;
-            rate = "60.00";
+            rate = "99.98";
             mode = "3440x1440";
             primary = true;
             position = "200x2160";
