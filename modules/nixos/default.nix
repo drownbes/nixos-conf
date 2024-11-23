@@ -3,4 +3,5 @@
 {
   # List your module files here
   autorandr-rs = import ./autorandr-rs.nix;
+  nordvpn = import ./nordvpn.nix;
 }

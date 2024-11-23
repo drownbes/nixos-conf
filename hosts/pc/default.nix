@@ -26,6 +26,7 @@
     ./searx.nix
     ./keyboard.nix
     ./docker.nix
+    ./nordvpn.nix
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -53,7 +54,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "AM";
-    extraGroups = ["networkmanager" "wheel" "gamemod" "docker"];
+    extraGroups = ["networkmanager" "wheel" "gamemod" "docker" "nordvpn"];
     packages = with pkgs; [];
   };
   programs.zsh.enable = true;

@@ -2,4 +2,5 @@
 # You can build them using 'nix build .#example'
 pkgs: {
   autorandr-rs = pkgs.callPackage ./autorandr-rs.nix {};
+  nordvpn = pkgs.callPackage ./nordvpn.nix {};
 }
