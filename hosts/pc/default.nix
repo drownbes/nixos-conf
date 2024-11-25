@@ -36,8 +36,15 @@
     owner = "drownbes";
     mode = "440";
   };
+
+  age.secrets.grok_token = {
+    file = ../../secrets/grok_token.age;
+    owner = "drownbes";
+    mode = "440";
+  };
   environment.variables = {
     OPENAI_API_KEY = "$(cat ${config.age.secrets.openai_token.path})";
+    GROQ_API_KEY = "$(cat ${config.age.secrets.grok_token.path})";
   };
 
   # find a way to define it in home-manager

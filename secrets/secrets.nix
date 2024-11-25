@@ -4,4 +4,5 @@ let
   keys = [drownbes pc];
 in {
   "openai_token.age".publicKeys = keys;
+  "grok_token.age".publicKeys = keys;
 }
