@@ -344,30 +344,30 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("neo-tree").setup({
-				filesystem = {
-					filtered_items = {
-						hide_dotfiles = false,
-						hide_gitignored = false,
-						hide_hidden = false,
-					},
-					follow_current_file = {
-						enabled = true,
-						leave_dirs_open = true,
-					},
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v3.x",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("neo-tree").setup({
+	-- 			filesystem = {
+	-- 				filtered_items = {
+	-- 					hide_dotfiles = false,
+	-- 					hide_gitignored = false,
+	-- 					hide_hidden = false,
+	-- 				},
+	-- 				follow_current_file = {
+	-- 					enabled = true,
+	-- 					leave_dirs_open = true,
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
@@ -460,6 +460,11 @@ require("lazy").setup({
 			})
 		end,
 	},
+  {
+    'ms-jpq/chadtree',
+    branch = "chad",
+    build = "python3 -m chadtree deps",
+  },
 	{
 		"tzachar/cmp-ai",
 		dependencies = { "nvim-lua/plenary.nvim" },
