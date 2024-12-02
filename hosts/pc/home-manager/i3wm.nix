@@ -14,6 +14,14 @@ let
   '';
   modifier = config.xsession.windowManager.i3.config.modifier;
 in {
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
   xsession.windowManager.i3 = {
     enable = true;
     config = {
