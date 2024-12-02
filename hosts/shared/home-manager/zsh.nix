@@ -6,7 +6,7 @@
     '';
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "fzf" "fd" "ripgrep"];
+      plugins = ["git" "fzf"];
       theme = "robbyrussell";
     };
   };

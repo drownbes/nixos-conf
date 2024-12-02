@@ -1,9 +1,8 @@
 {pkgs, ...}: {
   programs.alacritty = {
     enable = true;
-    package = pkgs.unstable.alacritty;
     settings = {
-      import = [
+      general.import = [
         pkgs.alacritty-theme.oceanic_next
       ];
       selection = {

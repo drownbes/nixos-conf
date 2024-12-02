@@ -460,11 +460,11 @@ require("lazy").setup({
 			})
 		end,
 	},
-  {
-    'ms-jpq/chadtree',
-    branch = "chad",
-    build = "python3 -m chadtree deps",
-  },
+	{
+		"ms-jpq/chadtree",
+		branch = "chad",
+		build = "python3 -m chadtree deps",
+	},
 	{
 		"tzachar/cmp-ai",
 		dependencies = { "nvim-lua/plenary.nvim" },

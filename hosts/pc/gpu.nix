@@ -14,7 +14,7 @@
       enable = true;
     };
     open = false;
-    nvidiaSettings = false;
+    nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "565.57.01";
       sha256_64bit = "sha256-buvpTlheOF6IBPWnQVLfQUiHv4GcwhvZW3Ks0PsYLHo=";
@@ -39,12 +39,9 @@
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
-    (config.hardware.nvidia.package.settings.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs ++ [pkgs.vulkan-headers];
-    }))
   ];
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = [
       pkgs.nvidia-vaapi-driver
