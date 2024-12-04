@@ -27,6 +27,8 @@
     ./keyboard.nix
     ./docker.nix
     ./nordvpn.nix
+    ./tailscale.nix
+    ./synthing.nix
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -67,7 +69,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "AM";
-    extraGroups = ["networkmanager" "wheel" "gamemod" "docker" "nordvpn"];
+    extraGroups = ["networkmanager" "wheel" "gamemod" "docker" "nordvpn" "syncthing"];
     packages = with pkgs; [];
   };
   programs.zsh.enable = true;
