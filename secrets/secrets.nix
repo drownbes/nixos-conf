@@ -5,4 +5,5 @@ let
 in {
   "openai_token.age".publicKeys = keys;
   "grok_token.age".publicKeys = keys;
+  "anthropic_token.age".publicKeys = keys;
 }

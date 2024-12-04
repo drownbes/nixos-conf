@@ -42,9 +42,15 @@
     owner = "drownbes";
     mode = "440";
   };
+  age.secrets.anthropic_token = {
+    file = ../../secrets/anthropic_token.age;
+    owner = "drownbes";
+    mode = "440";
+  };
   environment.variables = {
     OPENAI_API_KEY = "$(cat ${config.age.secrets.openai_token.path})";
     GROQ_API_KEY = "$(cat ${config.age.secrets.grok_token.path})";
+    ANTHROPIC_API_KEY = "$(cat ${config.age.secrets.anthropic_token.path})";
   };
 
   # find a way to define it in home-manager
@@ -83,6 +89,15 @@
     element-desktop
     unstable.nix
     unstable.obsidian
+
+    ranger
+    transmission_4
+    file
+    w3m
+    highlight
+    atool
+    mediainfo
+    poppler_utils
   ];
 
   services.fwupd.enable = true;
