@@ -91,15 +91,6 @@
     element-desktop
     unstable.nix
     unstable.obsidian
-
-    ranger
-    transmission_4
-    file
-    w3m
-    highlight
-    atool
-    mediainfo
-    poppler_utils
   ];
 
   services.fwupd.enable = true;

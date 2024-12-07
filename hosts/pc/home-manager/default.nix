@@ -23,6 +23,7 @@
     ./pasystray.nix
     ./redshift.nix
     ./nix-direnv.nix
+    ./file-manager.nix
   ];
 
   # Add stuff for your user as you see fit:
