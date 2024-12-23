@@ -29,6 +29,7 @@
     ./nordvpn.nix
     ./tailscale.nix
     ./synthing.nix
+    ./steam.nix
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -91,6 +92,7 @@
     element-desktop
     unstable.nix
     unstable.obsidian
+    firefox
   ];
 
   services.fwupd.enable = true;

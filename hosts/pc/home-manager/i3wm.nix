@@ -16,11 +16,11 @@ let
 in {
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
+    xdgOpenUsePortal = false;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
-    config.common.default = "*";
+    config.common.default = "gtk";
   };
   xsession.windowManager.i3 = {
     enable = true;
