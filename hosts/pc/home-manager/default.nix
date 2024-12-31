@@ -24,6 +24,7 @@
     ./redshift.nix
     ./nix-direnv.nix
     ./file-manager.nix
+    ./tex.nix
   ];
 
   # Add stuff for your user as you see fit:
