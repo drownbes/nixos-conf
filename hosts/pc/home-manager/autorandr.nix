@@ -36,7 +36,8 @@
       "with-tv" = {
         fingerprint = {
           DP-2 = AOC;
-          HDMI-1 = TV;
+          HDMI-1 = Dell;
+          HDMI-0 = TV;
         };
         config = {
           DP-2 = {
@@ -45,15 +46,23 @@
             rate = "99.98";
             mode = "3440x1440";
             primary = true;
-            position = "3840x720";
+            position = "4040x2160";
           };
-          HDMI-1 = {
+          HDMI-0 = {
             enable = true;
             crtc = 0;
             rate = "119.88";
             mode = "3840x2160";
             primary = false;
-            position = "0x0";
+            position = "0x1440";
+          };
+          HDMI-1 = {
+            enable = true;
+            crtc = 0;
+            rate = "60";
+            mode = "3840x2160";
+            primary = false;
+            position = "3840x0";
           };
         };
       };
