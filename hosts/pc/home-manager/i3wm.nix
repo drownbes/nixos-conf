@@ -25,6 +25,11 @@ in {
   xsession.windowManager.i3 = {
     enable = true;
     config = {
+      fonts = {
+        names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
+        style = "Bold Semi-Condensed";
+        size = 8.0;
+      };
       bars = [];
       terminal = "${lib.getExe pkgs.alacritty}";
       menu = "\"${lib.getExe pkgs.rofi} -modi drun, run -show drun\"";
