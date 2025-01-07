@@ -93,6 +93,7 @@
     unstable.nix
     unstable.obsidian
     firefox
+    flameshot
   ];
 
   services.fwupd.enable = true;
