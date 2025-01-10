@@ -30,6 +30,7 @@
     ./tailscale.nix
     ./synthing.nix
     ./steam.nix
+    ./obs.nix
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -93,6 +94,8 @@
     unstable.nix
     unstable.obsidian
     firefox
+    chromium
+    google-chrome
     flameshot
   ];
 
@@ -106,14 +109,13 @@
     };
   };
 
-  console.font =
-    "${pkgs.terminus_font}/share/consolefonts/ter-u14n.psf.gz";
+  console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u14n.psf.gz";
   environment.variables = {
     GDK_SCALE = "2";
     GDK_DPI_SCALE = "0.4";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     XCURSOR_SIZE = 32;
-    QT_AUTO_SCREEN_SCALE_FACTOR=1;
+    QT_AUTO_SCREEN_SCALE_FACTOR = 1;
   };
 
   services.xserver.displayManager.importedVariables = [

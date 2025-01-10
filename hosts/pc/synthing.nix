@@ -5,5 +5,4 @@
     dataDir = "/home/drownbes/syncthing_data";
     user = "drownbes";
   };
-
 }

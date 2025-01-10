@@ -26,7 +26,7 @@ in {
     enable = true;
     config = {
       fonts = {
-        names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
+        names = ["DejaVu Sans Mono" "FontAwesome5Free"];
         style = "Bold Semi-Condensed";
         size = 8.0;
       };

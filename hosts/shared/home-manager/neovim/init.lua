@@ -502,5 +502,5 @@ require("lazy").setup({
 			"echasnovski/mini.pick", -- optional
 		},
 		config = true,
-	}
+	},
 })
