@@ -31,8 +31,11 @@
     ./synthing.nix
     ./steam.nix
     ./obs.nix
+
+    ./beef_market.nix
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
+    inputs.beef_market.nixosModules.beef_market
   ];
 
   age.secrets.openai_token = {
