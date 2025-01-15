@@ -96,10 +96,18 @@
     element-desktop
     unstable.nix
     unstable.obsidian
+    unstable.code-cursor
     firefox
     chromium
     google-chrome
     flameshot
+  ];
+
+  services.gvfs.enable = true;
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
   ];
 
   services.fwupd.enable = true;

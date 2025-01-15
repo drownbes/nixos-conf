@@ -4,6 +4,6 @@
   networking.wireless.enable = false;
   networking.networkmanager.enable = false;
   services.resolved.enable = true;
-  networking.nameservers = ["192.168.0.199" "100.100.100.100"];
+  networking.nameservers = ["8.8.8.8"];
   networking.search = ["example.ts.net"];
 }

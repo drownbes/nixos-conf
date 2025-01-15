@@ -64,11 +64,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1736610528,
-        "narHash": "sha256-1TJOHgsEOAaFpKElx5aQrbcbm+vfqyfDNrrTztWOyQw=",
+        "lastModified": 1736766227,
+        "narHash": "sha256-ReWPHfP8d5Ogm26li4gKxh+QeZyqAQGpxGlT0IiiUF8=",
         "owner": "drownbes",
         "repo": "beef_market",
-        "rev": "8cfd5c948d67236b5a2ada67303616b581acc68a",
+        "rev": "071d5bb9d550bd235b0ec01de7862408ad52fb2d",
         "type": "github"
       },
       "original": {
