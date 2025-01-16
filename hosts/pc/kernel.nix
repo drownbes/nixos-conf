@@ -6,6 +6,10 @@
   boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
   hardware.enableAllFirmware = true;
 
+  console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u14n.psf.gz";
+
+  services.fwupd.enable = true;
+
   # don't wakeup on pci
   services.udev.extraRules = ''
     ACTION=="add" SUBSYSTEM=="pci" DRIVER=="pcieport"     ATTR{power/wakeup}="disabled"

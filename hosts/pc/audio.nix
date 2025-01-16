@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -6,6 +6,12 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  environment.systemPackages = with pkgs; [
+    pwvucontrol
+    pamixer
+    pulseaudio
+    pavucontrol
+  ];
 
   services.pipewire.wireplumber.extraConfig."10-bluez" = {
     "monitor.bluez.properties" = {
