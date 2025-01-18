@@ -27,7 +27,8 @@
   services.displayManager.sddm.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "us,ru";
+    options = "grp:alt_shift_toggle";
     variant = "";
   };
 }

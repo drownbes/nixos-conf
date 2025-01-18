@@ -27,6 +27,7 @@
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
+
   ];
 
   hardware.graphics = {
@@ -35,6 +36,7 @@
       pkgs.nvidia-vaapi-driver
       pkgs.vaapiVdpau
       pkgs.libvdpau-va-gl
+      pkgs.nvtopPackages.nvidia
     ];
   };
 }

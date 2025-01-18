@@ -58,14 +58,13 @@
   environment.systemPackages = with pkgs; [
     wget
     clipboard-jh
-    nvtopPackages.nvidia
-    vscode
-    gcc
     xclip
+    vscode
+    unstable.code-cursor
+    gcc
     element-desktop
     unstable.nix
     unstable.obsidian
-    unstable.code-cursor
     firefox
     chromium
     google-chrome
