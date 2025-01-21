@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
   ];
   services.xserver.videoDrivers = ["nvidia"];
@@ -27,7 +24,6 @@
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
-
   ];
 
   hardware.graphics = {

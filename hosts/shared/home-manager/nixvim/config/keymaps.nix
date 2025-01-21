@@ -1,12 +1,12 @@
-{ programs.nixvim = {
-  globals = {
-    mapleader = "\\";
+{
+  programs.nixvim = {
+    globals = {
+      mapleader = "\\";
+    };
+    extraConfigLua = ''
+
+      vim.cmd("nore ; :")
+      vim.cmd("tnoremap <Esc> <C-\\><C-n>")
+    '';
   };
-  extraConfigLua = ''
-
-    vim.cmd("nore ; :")
-    vim.cmd("tnoremap <Esc> <C-\\><C-n>")
-  '';
-
-};
 }

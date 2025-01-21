@@ -9,16 +9,15 @@
 
     keymaps.lspBuf = {
       gd = "definition";
-			gD = "declaration";
-			gi = "implementation";
-			gr = "references";
-			"<space>ca" = "code_action";
+      gD = "declaration";
+      gi = "implementation";
+      gr = "references";
+      "<space>ca" = "code_action";
     };
   };
 
   plugins.rustaceanvim.enable = true;
   plugins.codeium-nvim.enable = true;
-
 
   plugins.lspsaga = {
     enable = true;

@@ -3,16 +3,16 @@
     enable = true;
     extensions.fzf-native.enable = true;
     keymaps = {
-			"<leader>f" = {
+      "<leader>f" = {
         action = "find_files";
       };
-			"<leader>fg" = {
+      "<leader>fg" = {
         action = "live_grep";
       };
-			"<leader>fb" = {
+      "<leader>fb" = {
         action = "buffers";
       };
-			"<leader>fh" = {
+      "<leader>fh" = {
         action = "help_tags";
       };
     };

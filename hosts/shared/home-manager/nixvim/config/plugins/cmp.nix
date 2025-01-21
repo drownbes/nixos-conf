@@ -9,55 +9,55 @@
     enable = true;
     autoEnableSources = true;
     settings.sources = [
-      { name = "nvim_lsp"; }
-      { name = "codeium"; }
-      { name = "luasnip"; }
-      { name = "path"; }
-      { name = "buffer"; }
-      { name = "rg"; }
+      {name = "nvim_lsp";}
+      {name = "codeium";}
+      {name = "luasnip";}
+      {name = "path";}
+      {name = "buffer";}
+      {name = "rg";}
     ];
     settings.mapping = {
       "<C-b>" = "cmp.mapping.scroll_docs(-4)";
       "<C-f>" = "cmp.mapping.scroll_docs(4)";
       "<C-Space>" = ''
-      cmp.mapping(function(fallback)
-        local luasnip = require("luasnip")
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.locally_jumpable(1) then
-          luasnip.jump(1)
-        else
-          fallback()
-        end
-      end, { "i", "s" })
+        cmp.mapping(function(fallback)
+          local luasnip = require("luasnip")
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.locally_jumpable(1) then
+            luasnip.jump(1)
+          else
+            fallback()
+          end
+        end, { "i", "s" })
       '';
       "<S-Tab>" = ''
-      cmp.mapping(function(fallback)
-      local luasnip = require("luasnip")
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.locally_jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, { "i", "s" })
+        cmp.mapping(function(fallback)
+        local luasnip = require("luasnip")
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" })
       '';
       "<CR>" = ''
-      cmp.mapping(function(fallback)
-        local luasnip = require("luasnip")
-        if cmp.visible() then
-            if luasnip.expandable() then
-                luasnip.expand()
-            else
-                cmp.confirm({
-                    select = true,
-                })
-            end
-        else
-            fallback()
-        end
-      end)'';
+        cmp.mapping(function(fallback)
+          local luasnip = require("luasnip")
+          if cmp.visible() then
+              if luasnip.expandable() then
+                  luasnip.expand()
+              else
+                  cmp.confirm({
+                      select = true,
+                  })
+              end
+          else
+              fallback()
+          end
+        end)'';
     };
   };
 
@@ -68,9 +68,9 @@
         __raw = "cmp.mapping.preset.cmdline()";
       };
       sources = [
-      {
-        name = "buffer";
-      }
+        {
+          name = "buffer";
+        }
       ];
     };
     ":" = {
@@ -78,20 +78,19 @@
         __raw = "cmp.mapping.preset.cmdline()";
       };
       sources = [
-      {
-        name = "path";
-      }
-      {
-        name = "cmdline";
-        option = {
-          ignore_cmds = [
-            "Man"
+        {
+          name = "path";
+        }
+        {
+          name = "cmdline";
+          option = {
+            ignore_cmds = [
+              "Man"
               "!"
-          ];
-        };
-      }
+            ];
+          };
+        }
       ];
     };
   };
-
 }
