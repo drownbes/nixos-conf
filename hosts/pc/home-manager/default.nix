@@ -8,8 +8,8 @@
     ../../shared/home-manager/fd.nix
     ../../shared/home-manager/telegram.nix
     ../../shared/home-manager/eza.nix
-    ../../shared/home-manager/neovim
-    #../../shared/home-manager/nixvim
+    #../../shared/home-manager/neovim
+    ../../shared/home-manager/nixvim
     ./i3wm.nix
     ./rofi.nix
     ./dunst.nix
