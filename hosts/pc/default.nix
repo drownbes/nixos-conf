@@ -69,6 +69,10 @@
     chromium
     google-chrome
     flameshot
+    lutris
+    wineWowPackages.full
+    winetricks
+    playonlinux
   ];
 
   home-manager = {
