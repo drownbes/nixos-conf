@@ -5,18 +5,50 @@
   };
 
   plugins.luasnip.enable = true;
+
+  plugins.cmp-ai = {
+    enable = true;
+
+    settings.__raw = ''
+      {
+          max_lines = 100,
+          provider = 'Ollama',
+          provider_options = {
+            model = 'qwen2.5-coder:7b-base-q8_0',
+            prompt = function(lines_before, lines_after)
+            -- You may include filetype and/or other project-wise context in this string as well.
+            -- Consult model documentation in case there are special tokens for this.
+              return "<|fim_prefix|>" .. lines_before .. "<|fim_suffix|>" .. lines_after .. "<|fim_middle|>"
+            end,
+          },
+          notify = true,
+          notify_callback = function(msg)
+            vim.notify(msg)
+          end,
+          run_on_every_keystroke = false,
+        }
+    '';
+  };
+
+  plugins = {
+    cmp-nvim-lsp.enable = true;
+    cmp-path.enable = true;
+    cmp-buffer.enable = true;
+    cmp-rg.enable = true;
+  };
+
   plugins.cmp = {
     enable = true;
-    autoEnableSources = true;
+    autoEnableSources = false;
     settings.sources = [
       {name = "nvim_lsp";}
       {name = "codeium";}
+      {name = "cmp_ai";}
       {name = "luasnip";}
       {name = "path";}
       {name = "buffer";}
       {name = "rg";}
     ];
-
 
     settings.mapping = {
       __raw = ''
