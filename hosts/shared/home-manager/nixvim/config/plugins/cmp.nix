@@ -30,12 +30,12 @@
     '';
   };
 
-  plugins.copilot-cmp.enable = true;
-  plugins.copilot-lua = {
-    enable = true;
-    suggestion.enabled = false;
-    panel.enabled = false;
-  };
+  #plugins.copilot-cmp.enable = true;
+  #plugins.copilot-lua = {
+  #  enable = true;
+  #  suggestion.enabled = false;
+  #  panel.enabled = false;
+  #};
 
   plugins = {
     cmp-nvim-lsp.enable = true;
@@ -50,8 +50,8 @@
     settings.sources = [
       {name = "nvim_lsp";}
       {name = "codeium";}
-      {name = "copilot";}
-      {name = "cmp_ai";}
+      #{name = "copilot";}
+      #{name = "cmp_ai";}
       {name = "luasnip";}
       {name = "path";}
       {name = "buffer";}

@@ -73,6 +73,7 @@
     wineWowPackages.full
     winetricks
     playonlinux
+    zoom-us
   ];
 
   home-manager = {
