@@ -52,7 +52,6 @@
     shell = pkgs.zsh;
     description = "AM";
     extraGroups = ["networkmanager" "wheel" "gamemod" "docker" "nordvpn" "syncthing"];
-    packages = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [
@@ -69,10 +68,6 @@
     chromium
     google-chrome
     flameshot
-    lutris
-    wineWowPackages.full
-    winetricks
-    playonlinux
     zoom-us
   ];
 
