@@ -35,6 +35,8 @@
     ./xserver.nix
     ./secrets.nix
     ./ssh.nix
+    ./utils.nix
+    ./proprietary.nix
 
     ./beef_market.nix
     inputs.agenix.nixosModules.default
@@ -55,20 +57,13 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget
-    clipboard-jh
-    xclip
-    vscode
-    unstable.code-cursor
     gcc
     element-desktop
     unstable.nix
-    unstable.obsidian
     firefox
     chromium
     google-chrome
     flameshot
-    zoom-us
   ];
 
   home-manager = {
