@@ -39,6 +39,28 @@ in {
         "${modifier}+h" = "focus left";
         "${modifier}+l" = "focus right";
       };
+      window.commands = [
+        {
+          command = "floating enable";
+          criteria = {
+            class = "(.*join\?action\=join.*|.*zoom.*)";
+          };
+        }
+        {
+          command = "floating disable";
+          criteria = {
+            class = "(.*join\?action\=join.*|.*zoom.*)";
+            title = "Zoom - Licensed Account";
+          };
+        }
+        {
+          command = "floating disable";
+          criteria = {
+            class = "(.*join\?action\=join.*|.*zoom.*)";
+            title="Zoom Meeting";
+          };
+        }
+      ];
     };
   };
   xsession.windowManager.i3.config.startup = [
