@@ -64,6 +64,9 @@
     chromium
     google-chrome
     flameshot
+
+    unstable.nodePackages_latest.nodejs
+    unstable.typescript
   ];
 
   home-manager = {
