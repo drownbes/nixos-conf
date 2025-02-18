@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   environment.variables = {
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.4";
-    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+    #GDK_SCALE = "2";
+    #GDK_DPI_SCALE = "0.4";
+    #_JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     XCURSOR_SIZE = 32;
-    QT_AUTO_SCREEN_SCALE_FACTOR = 1;
+    #QT_AUTO_SCREEN_SCALE_FACTOR = 1;
   };
 
   services.xserver.displayManager.importedVariables = [

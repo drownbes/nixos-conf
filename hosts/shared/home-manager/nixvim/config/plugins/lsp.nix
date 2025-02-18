@@ -18,6 +18,7 @@
 
   plugins.rustaceanvim.enable = true;
   plugins.codeium-nvim.enable = true;
+  plugins.typescript-tools.enable = true;
 
   plugins.lspsaga = {
     enable = true;
