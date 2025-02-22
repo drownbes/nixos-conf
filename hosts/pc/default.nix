@@ -68,6 +68,8 @@
     unstable.nodePackages_latest.nodejs
     unstable.typescript
     unstable.typescript-language-server
+
+    jetbrains.rust-rover
   ];
 
   home-manager = {
