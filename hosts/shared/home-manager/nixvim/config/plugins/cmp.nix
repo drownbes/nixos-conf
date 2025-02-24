@@ -49,7 +49,7 @@
     autoEnableSources = false;
     settings.sources = [
       {name = "nvim_lsp";}
-      {name = "codeium";}
+      #{name = "codeium";}
       #{name = "copilot";}
       #{name = "cmp_ai";}
       {name = "luasnip";}
