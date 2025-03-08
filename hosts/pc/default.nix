@@ -58,7 +58,6 @@
 
   environment.systemPackages = with pkgs; [
     gcc
-    element-desktop
     unstable.nix
     firefox
     chromium
@@ -68,8 +67,6 @@
     unstable.nodePackages_latest.nodejs
     unstable.typescript
     unstable.typescript-language-server
-
-    jetbrains.rust-rover
 
     unstable.wineWowPackages.full
     unstable.wineWowPackages.fonts
