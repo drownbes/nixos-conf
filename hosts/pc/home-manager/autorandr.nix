@@ -45,7 +45,7 @@
             crtc = 0;
             rate = "99.98";
             mode = "3440x1440";
-            primary = true;
+            primary = false;
             position = "4040x2160";
           };
           HDMI-0 = {
@@ -53,7 +53,7 @@
             crtc = 0;
             rate = "119.88";
             mode = "3840x2160";
-            primary = false;
+            primary = true;
             position = "0x1440";
           };
           HDMI-1 = {
