@@ -67,17 +67,6 @@
     unstable.nodePackages_latest.nodejs
     unstable.typescript
     unstable.typescript-language-server
-
-    unstable.wineWowPackages.full
-    unstable.wineWowPackages.fonts
-    freetype
-  ];
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    freetype
-    unstable.wineWowPackages.full
-    unstable.wineWowPackages.fonts
   ];
 
   home-manager = {
