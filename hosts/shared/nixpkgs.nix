@@ -6,7 +6,6 @@
   ...
 }: {
   nixpkgs = {
-    hostPlatform = lib.mkDefault "x86_64-linux";
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):

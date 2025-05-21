@@ -6,8 +6,15 @@
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
-  modifications = final: _prev: {
+  modifications = final: prev: {
     beef_market = inputs.beef_market.packages.${final.system}.beef_market;
+    nodePackages.nodejs = prev.nodePackages.nodejs.overrideAttrs (oldAttrs: {
+        doCheck = false;
+    });
+    nodejs_20 = prev.nodejs_20.overrideAttrs (oldAttrs: {
+        doCheck = false;
+    });
+
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });

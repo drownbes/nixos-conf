@@ -17,7 +17,7 @@
   };
 
   plugins.rustaceanvim.enable = true;
-  plugins.codeium-nvim.enable = false;
+  #plugins.codeium-nvim.enable = false;
   plugins.typescript-tools.enable = true;
 
   plugins.lspsaga = {

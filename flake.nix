@@ -24,7 +24,7 @@
     };
 
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -42,7 +42,7 @@
       #"aarch64-linux"
       #"i686-linux"
       "x86_64-linux"
-      #"aarch64-darwin"
+      "aarch64-darwin"
       #"x86_64-darwin"
     ];
     # This is a function that generates an attribute by calling a function you
@@ -52,6 +52,15 @@
 
     # Eval the treefmt modules from ./treefmt.nix
     treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+
+    disableAllChecks = final: prev:
+      builtins.mapAttrs (name: value:
+        if nixpkgs.lib.isDerivation value then
+          value.overrideAttrs (oldAttrs: {
+            doCheck = false;
+          })
+        else value
+      ) prev;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -68,6 +77,7 @@
     # Reusable home-manager modules you might want to export
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
+
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -89,8 +99,11 @@
       };
     };
 
-    darwinConfigurations."Johns-MacBook" = nix-darwin.lib.darwinSystem {
-      modules = [ ./hosts/mackbook ];
+    darwinConfigurations."macbook" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs outputs;};
+      modules = [ 
+      	./hosts/macbook
+      ];
     };
   };
 }
