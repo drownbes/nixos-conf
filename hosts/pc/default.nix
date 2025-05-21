@@ -67,6 +67,8 @@
     unstable.nodePackages_latest.nodejs
     unstable.typescript
     unstable.typescript-language-server
+
+    unstable.anki-bin
   ];
 
   home-manager = {
