@@ -22,12 +22,18 @@
       url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     treefmt-nix,
+    nix-darwin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -81,6 +87,10 @@
           ./hosts/laptop
         ];
       };
+    };
+
+    darwinConfigurations."Johns-MacBook" = nix-darwin.lib.darwinSystem {
+      modules = [ ./hosts/mackbook ];
     };
   };
 }
